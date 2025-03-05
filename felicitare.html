@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicitare 8 Martie - Lucky Seven</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000; /* Fundal negru */
+            color: #ff0000; /* Text roșu */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 2.5em;
+        }
+        .slot-machine {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .slot {
+            width: 80px;
+            height: 80px;
+            font-size: 2.5em;
+            text-align: center;
+            line-height: 80px;
+            background: white;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+            box-shadow: 0 4px 6px rgba(255, 0, 0, 0.5);
+        }
+        .button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #cc0000;
+        }
+        .hidden-message {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            margin: 20px;
+            font-size: 1.2em;
+            color: black; /* Mesajul rămâne negru pe alb */
+        }
+        .heart {
+            font-size: 3em;
+            animation: heartbeat 1s infinite;
+            color: red;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌸 La mulți ani, dragi colege! 🌸</h1>
+        <p class="heart">❤️</p>
+
+        <div class="slot-machine">
+            <div class="slot" id="slot1">❓</div>
+            <div class="slot" id="slot2">❓</div>
+            <div class="slot" id="slot3">❓</div>
+        </div>
+
+        <button class="button" onclick="spinSlots()">Apasă pentru noroc!</button>
+        
+        <div id="message" class="hidden-message">
+            <p>Astăzi, de 8 Martie, vă mulțumim pentru energia, inspirația și vibe-ul pozitiv pe care îl aduceți zilnic în echipă. Fără voi, Lucky Seven n-ar fi la fel de norocos! Așa că am pregătit un dar simbolic, cu gândul la voi:</p>
+            
+            <ul style="list-style-type: none; padding: 0;">
+                <li>🫧 Un săpun fin – pentru prospețime și seninătate.</li>
+                <li>🍫 Ceva dulce – ca zâmbetele voastre.</li>
+                <li>🍯 Miere aurie – pentru bunătatea și energia voastră.</li>
+                <li>💜 Lavandă – pentru momente de relaxare.</li>
+                <li>🌷 Flori – pentru că voi sunteți cele care înfloriți zi de zi.</li>
+            </ul>
+            
+            <p>**Și dacă azi am fi la păcănele, voi ați fi jackpot-ul nostru norocos! 🎰✨**  
+            Fără voi, echipa ar fi ca un aparat fără fise – pur și simplu nu merge! 😆 Așa că azi, băgăm "max bet" pe apreciere și vă dorim să aveți parte doar de linii câștigătoare: bucurie, succes și multe zâmbete!</p>
+
+            <h2>**La mulți ani!**</h2>
+        </div>
+    </div>
+
+    <script>
+        function spinSlots() {
+            let symbols = ["🍀", "🌸", "🎰", "❤️", "💎", "💜"];
+            let slot1 = document.getElementById("slot1");
+            let slot2 = document.getElementById("slot2");
+            let slot3 = document.getElementById("slot3");
+
+            slot1.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            slot2.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            slot3.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+            setTimeout(() => {
+                document.getElementById("message").style.display = "block";
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
